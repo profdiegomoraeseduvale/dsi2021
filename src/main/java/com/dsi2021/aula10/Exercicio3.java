@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dsi2021.aula9;
-
-import javax.swing.JOptionPane;
+package com.dsi2021.aula10;
 
 /**
  *
  * @author diegomoraes
  */
-public class Exemplo3 extends javax.swing.JFrame {
+public class Exercicio3 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Exemplo1
+     * Creates new form Exercicio1
      */
-    public Exemplo3() {
+    public Exercicio3() {
         initComponents();
     }
 
@@ -29,67 +27,65 @@ public class Exemplo3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
+        btnCalcular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
-        getContentPane().setLayout(new java.awt.FlowLayout());
 
-        jLabel1.setText("Digite um nome:");
-        getContentPane().add(jLabel1);
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        txtResultado.setEditable(false);
         txtResultado.setColumns(20);
-        txtResultado.setLineWrap(true);
-        txtResultado.setRows(10);
-        txtResultado.setEnabled(false);
+        txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
 
-        getContentPane().add(jScrollPane1);
+        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(380, 206));
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel1.setText("Digite um valor:");
+        jPanel2.add(jLabel1);
+        jPanel2.add(txtValor);
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnCalcular);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        setSize(new java.awt.Dimension(400, 328));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       
-        JOptionPane.showMessageDialog(this, "Bem-vindo!");
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         
-        int verificador = 0;
+      
         
-        do{
+        int valor = Integer.parseInt(txtValor.getText());
+        int contador=0;
+        
+        for (int i = 1; i <= valor; i++) {
             
-            String nome = JOptionPane.showInputDialog("Digite um nome:");     
-            
-            if(nome!=null){
-                
-             if(!nome.isEmpty()){
-               txtResultado.append(nome+"\n");            
-               verificador = JOptionPane.showConfirmDialog(this, "Deseja inserir outro nome?", "Inserir", JOptionPane.YES_NO_OPTION);
-                 
-             }else{
-               JOptionPane.showMessageDialog(this, "Preencha um nome!");    
-             }   
-             
-                
-            }else{
-                JOptionPane.showMessageDialog(this, "Aplicação  será encerrada");
-                System.exit(0);
+            if(i%2!=0 && i%3==0){
+                contador+=i;
             }
-                        
-           
             
-        }while(verificador==0);
+        }
         
-             JOptionPane.showMessageDialog(this, "Obrigado por utilizar o sistema!");    
+        txtResultado.setText("Total é = "+contador);
+       
         
-    }//GEN-LAST:event_formWindowOpened
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,13 +104,13 @@ public class Exemplo3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Exemplo3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Exemplo3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Exemplo3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Exemplo3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -124,14 +120,18 @@ public class Exemplo3 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Exemplo3().setVisible(true);
+                new Exercicio3().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtResultado;
+    private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }
