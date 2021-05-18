@@ -19,6 +19,9 @@ public class JFPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form JFPrincipal
      */
+    private Modulo1 jinternal1;
+    
+    
     public JFPrincipal() {
         initComponents();
     }
@@ -112,14 +115,22 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void mod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod1ActionPerformed
-        Modulo1 jinternal1 = new Modulo1();
-        deskPane.add(jinternal1);
-        jinternal1.setVisible(true);
+         
+        if(jinternal1 == null){
+            jinternal1 = new Modulo1();
+        }
+        
+        if(!jinternal1.isVisible()){
+            deskPane.add(jinternal1);
+            jinternal1.setVisible(true);
+        }
+        
     }//GEN-LAST:event_mod1ActionPerformed
 
     private void mod3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod3ActionPerformed
-        Modulo3 jframe3 = new Modulo3();
-        jframe3.setVisible(true);
+        Modulo3 jframe3 = new Modulo3();      
+        jframe3.setVisible(true);       
+        
     }//GEN-LAST:event_mod3ActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
