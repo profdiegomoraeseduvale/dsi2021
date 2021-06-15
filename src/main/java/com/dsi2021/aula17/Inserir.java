@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dsi2021.aula16;
+package com.dsi2021.aula17;
 
+import com.dsi2021.aula16.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -103,7 +104,9 @@ public class Inserir extends javax.swing.JInternalFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         
-        String senha = new String(txtSenha.getPassword()).trim();
+        String senha = new String(txtSenha.getPassword());
+       
+     
         
         sql = "INSERT INTO Usuario (usu_nome, usu_email, usu_senha, usu_tipo, usu_ativo) VALUES (?,?,md5(?),1,1)";
         

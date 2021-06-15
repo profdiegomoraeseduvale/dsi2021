@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dsi2021.aula16;
+package com.dsi2021.aula17;
 
+import com.dsi2021.aula16.*;
 import com.dsi2021.aula11.*;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -129,7 +130,9 @@ public class JFPrincipal extends javax.swing.JFrame {
         int opt = JOptionPane.showConfirmDialog(this, "Deseja sair?", "Atenção", JOptionPane.YES_NO_CANCEL_OPTION);
         
         if(opt==0){
-           System.exit(0);
+           Login login = new Login();
+           login.setVisible(true);
+           this.dispose();
         }
         
     }//GEN-LAST:event_sairActionPerformed
@@ -138,7 +141,9 @@ public class JFPrincipal extends javax.swing.JFrame {
           int opt = JOptionPane.showConfirmDialog(this, "Deseja sair?", "Atenção", JOptionPane.YES_NO_CANCEL_OPTION);
         
         if(opt==0){
-            System.exit(0);
+           Login login = new Login();
+           login.setVisible(true);
+           this.dispose();
         }
     }//GEN-LAST:event_formWindowClosing
 
@@ -178,6 +183,8 @@ public class JFPrincipal extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JFPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
