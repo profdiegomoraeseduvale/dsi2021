@@ -1,4 +1,4 @@
-/*
+/*ˆ
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -132,7 +132,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         if(opt==0){
            Login login = new Login();
            login.setVisible(true);
-           this.dispose();
+           this.dispose(); //Fecha tela
         }
         
     }//GEN-LAST:event_sairActionPerformed
